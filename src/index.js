@@ -1,39 +1,31 @@
-import React from "react"
+import React, { Component } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import { createStore, applyMiddleware } from "redux"
-import { Provider } from "react-redux"
-import { composeWithDevTools } from "redux-devtools-extension"
-import thunk from "redux-thunk"
-import rootReducer from "./reducers"
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
-import EventsIndex from "./components/events_index"
-import EventsNew from "./components/events_new"
-import EventsShow from "./components/events_show"
+import { MuiThemeProvider, withStyles } from "@material-ui/core/styles"
 
-const enhancer =
-  process.env.NODE_ENV === "development"
-    ? composeWithDevTools(applyMiddleware(thunk))
-    : applyMiddleware(thunk)
-const store = createStore(rootReducer, enhancer)
-const theme = createMuiTheme({
-  typography: {
-    useNextVariants: true
+import Login from "./components/Login";
+import SearchAppBar from "./components/SearchAppBar";
+import theme from "./theme/muiTheme";
+import styles from "./theme/styles";
+import ListShow from "./components/list/ListShow";
+
+class Index extends Component {
+  render() {
+    return (
+      <MuiThemeProvider theme={theme}>
+        <Router>
+          <div>
+            <SearchAppBar />
+            <Switch>
+              <Route exact path="/" component={Login} />
+              <Route exact path="/showlist" component={ListShow} />
+            </Switch>
+          </div>
+        </Router>
+      </MuiThemeProvider>
+    );
   }
-})
+}
 
-ReactDOM.render(
-  <MuiThemeProvider theme={theme}>
-    <Provider store={store}>
-      <Router>
-        <Switch>
-          <Route path="/events/new" component={EventsNew} />
-          <Route path="/events/:id" component={EventsShow} />
-          <Route exact path="/" component={EventsIndex} />
-          <Route exact path="/events" component={EventsIndex} />
-        </Switch>
-      </Router>
-    </Provider>
-  </MuiThemeProvider>,
-  document.getElementById("root")
-)
+const App = withStyles(styles)(Index);
+ReactDOM.render(<App />, document.getElementById("root"));
