@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import ReactDOM from "react-dom"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import { MuiThemeProvider, withStyles } from "@material-ui/core/styles"
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { MuiThemeProvider, withStyles } from "@material-ui/core/styles";
 
 import Login from "./components/Login";
 import SearchAppBar from "./components/SearchAppBar";
@@ -17,8 +17,8 @@ class Index extends Component {
           <div>
             <SearchAppBar />
             <Switch>
-              <Route exact path="/" component={Login} />
-              <Route exact path="/showlist" component={ListShow} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/" component={ListShow} />
             </Switch>
           </div>
         </Router>
