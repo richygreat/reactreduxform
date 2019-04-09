@@ -8,6 +8,7 @@ import SearchAppBar from "./components/SearchAppBar";
 import theme from "./theme/muiTheme";
 import styles from "./theme/styles";
 import ListShow from "./components/list/ListShow";
+import ViewItem from "./components/view/ViewItem";
 
 class Index extends Component {
   render() {
@@ -18,7 +19,8 @@ class Index extends Component {
             <SearchAppBar />
             <Switch>
               <Route exact path="/login" component={Login} />
-              <Route exact path="/" component={ListShow} />
+              <Route exact path="/list" component={ListShow} />
+              <Route exact path="/" component={ViewItem} />
             </Switch>
           </div>
         </Router>

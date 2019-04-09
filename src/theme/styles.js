@@ -7,6 +7,15 @@ const styles = theme => ({
       justifyContent: "flex-end"
     }
   },
+  pageNavBar: {
+    backgroundColor: "#eee"
+  },
+  headerBandTitle: {
+    marginBottom: 5
+  },
+  pageTitle: {
+    color: "#666"
+  },
   purpleText: {
     color: "#57346e"
   },
@@ -19,10 +28,13 @@ const styles = theme => ({
   greenText: {
     color: "#2e7d42"
   },
+  greenBadge: {
+    backgroundColor: "#39aa56",
+    color: "#ffffff"
+  },
   band: {
     borderLeft: "10px solid #39aa56",
     padding: 20,
-    maxWidth: 800,
     marginBottom: 10
   },
   disabled: {
