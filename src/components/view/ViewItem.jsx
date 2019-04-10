@@ -146,7 +146,7 @@ class ViewItem extends Component {
           <div className={classes.root}>
             <AppBar className={classes.pageNavBar} position="static">
               <Tabs value={value} onChange={this.handleChange}>
-                <Tab label="PROJECTS" />
+                <Tab label="FAVOURITES" />
                 <Tab label="RESOURCES" />
               </Tabs>
             </AppBar>

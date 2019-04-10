@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { withStyles, Paper, Grid, Typography, Button } from "@material-ui/core";
+import {
+  withStyles,
+  Paper,
+  Grid,
+  Typography,
+  Icon,
+  IconButton,
+  Avatar
+} from "@material-ui/core";
 import styles from "../../theme/styles";
 
 class ListShow extends Component {
@@ -10,12 +18,21 @@ class ListShow extends Component {
         <Grid item xs={12}>
           <Paper className={classes.band}>
             <Grid container alignItems="center">
-              <Grid item xs={12} sm={3}>
-                <Typography className={classes.greenText} variant="h6">
-                  spring-boot
-                </Typography>
+              <Grid item xs={12} sm={5}>
+                <Grid container>
+                  <Grid item xs={12} sm={2}>
+                    <Avatar style={{ width: 30, height: 30 }}>
+                      <Icon>cloud_queue</Icon>
+                    </Avatar>
+                  </Grid>
+                  <Grid item xs={12} sm={10}>
+                    <Typography className={classes.greenText} variant="h6">
+                      spring-boot
+                    </Typography>
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={3}>
+              <Grid item xs={12} sm={4}>
                 <Typography variant="caption" color="secondary">
                   STATUS
                 </Typography>
@@ -29,79 +46,32 @@ class ListShow extends Component {
                 </Typography>
                 <Typography variant="subtitle2">4</Typography>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={1}>
                 <Grid container className={classes.addButtonContainer}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    size="small"
-                    className={classes.bandButton}
-                  >
-                    Delete
-                  </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size="small"
-                    className={classes.bandButton}
-                  >
-                    View
-                  </Button>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Paper>
-          <Paper className={classes.band}>
-            <Grid container alignItems="center">
-              <Grid item xs={12} sm={3}>
-                <Typography className={classes.greenText} variant="h6">
-                  react-js
-                </Typography>
-              </Grid>
-              <Grid item xs={12} sm={3}>
-                <Typography variant="caption" color="secondary">
-                  STATUS
-                </Typography>
-                <Typography variant="subtitle2" className={classes.greenText}>
-                  Running
-                </Typography>
-              </Grid>
-              <Grid item xs={12} sm={2}>
-                <Typography variant="caption" color="secondary">
-                  REPLICA
-                </Typography>
-                <Typography variant="subtitle2">3</Typography>
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <Grid container className={classes.addButtonContainer}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    size="small"
-                    className={classes.bandButton}
-                  >
-                    Delete
-                  </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size="small"
-                    className={classes.bandButton}
-                  >
-                    View
-                  </Button>
+                  <IconButton>
+                    <Icon>arrow_forward_ios</Icon>
+                  </IconButton>
                 </Grid>
               </Grid>
             </Grid>
           </Paper>
           <Paper className={classes.disabledBand}>
             <Grid container alignItems="center">
-              <Grid item xs={12} sm={3}>
-                <Typography variant="h6" className={classes.disabled}>
-                  python
-                </Typography>
+              <Grid item xs={12} sm={5}>
+                <Grid container>
+                  <Grid item xs={12} sm={2}>
+                    <Avatar style={{ width: 30, height: 30 }}>
+                      <Icon>cloud_circle</Icon>
+                    </Avatar>
+                  </Grid>
+                  <Grid item xs={12} sm={10}>
+                    <Typography className={classes.disabled} variant="h6">
+                      python
+                    </Typography>
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={3}>
+              <Grid item xs={12} sm={4}>
                 <Typography variant="caption" color="secondary">
                   STATUS
                 </Typography>
@@ -117,25 +87,11 @@ class ListShow extends Component {
                   4
                 </Typography>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={1}>
                 <Grid container className={classes.addButtonContainer}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    size="small"
-                    disabled
-                    className={classes.bandButton}
-                  >
-                    Delete
-                  </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size="small"
-                    className={classes.bandButton}
-                  >
-                    View
-                  </Button>
+                  <IconButton>
+                    <Icon>arrow_forward_ios</Icon>
+                  </IconButton>
                 </Grid>
               </Grid>
             </Grid>
