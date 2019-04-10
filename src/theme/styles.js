@@ -41,7 +41,9 @@ const styles = theme => ({
     color: "#a1a1a1"
   },
   disabledBand: {
-    borderLeft: "10px solid #f1f1f1"
+    borderLeft: "10px solid #f1f1f1",
+    padding: 20,
+    marginBottom: 10
   }
 });
 export default styles;

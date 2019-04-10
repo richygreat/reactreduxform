@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import {
   withStyles,
   Grid,
@@ -16,19 +15,7 @@ import {
 } from "@material-ui/core";
 import styles from "../../theme/styles";
 import ListShow from "../list/ListShow";
-
-function TabContainer({ children, dir }) {
-  return (
-    <Typography component="div" dir={dir}>
-      {children}
-    </Typography>
-  );
-}
-
-TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-  dir: PropTypes.string.isRequired
-};
+import DashboardStats from "../DashboardStats";
 
 class ViewItem extends Component {
   state = {
@@ -44,7 +31,7 @@ class ViewItem extends Component {
     const { value } = this.state;
     return (
       <Grid container justify="center" style={{ padding: 20 }}>
-        <Grid item xs={12} sm={11} md={8} lg={6}>
+        <Grid item xs={12} sm={11} md={11} lg={8}>
           <div style={{ display: "flex", marginBottom: 20 }}>
             <Avatar style={{ width: 50, height: 50 }}>
               <Icon>cloud</Icon>
@@ -63,6 +50,48 @@ class ViewItem extends Component {
               icon={<Icon className={classes.greenText}>done</Icon>}
             />
           </div>
+          <Grid container style={{ marginBottom: 20 }}>
+            <Grid item xs={12} sm={6} lg={3}>
+              <DashboardStats
+                label="Projects"
+                subtitle="Sub Projects"
+                iconName="cloud_circle"
+                addLink="/cluster/new/"
+                viewLink="/cluster"
+                count="1"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} lg={3}>
+              <DashboardStats
+                label="Users"
+                subtitle="Active users"
+                iconName="person"
+                addLink="/user/new/"
+                viewLink="/user"
+                count="5"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} lg={3}>
+              <DashboardStats
+                label="Teams"
+                subtitle="Active teams"
+                iconName="people"
+                addLink="/team/new/"
+                viewLink="/team"
+                count="10"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} lg={3}>
+              <DashboardStats
+                label="Services"
+                subtitle="Microservices"
+                iconName="storage"
+                addLink="/service/new/"
+                viewLink="/service"
+                count="8"
+              />
+            </Grid>
+          </Grid>
           <Paper className={classes.band}>
             <Grid container>
               <Grid item xs={6}>
@@ -121,12 +150,8 @@ class ViewItem extends Component {
                 <Tab label="RESOURCES" />
               </Tabs>
             </AppBar>
-            {value === 0 && (
-              <TabContainer>
-                <ListShow />
-              </TabContainer>
-            )}
-            {value === 1 && <TabContainer />}
+            {value === 0 && <ListShow />}
+            {value === 1 && <div>Resources</div>}
           </div>
         </Grid>
       </Grid>

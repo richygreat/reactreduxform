@@ -94,7 +94,7 @@ class ListShow extends Component {
               </Grid>
             </Grid>
           </Paper>
-          <Paper className={[classes.band, classes.disabledBand]}>
+          <Paper className={classes.disabledBand}>
             <Grid container alignItems="center">
               <Grid item xs={12} sm={3}>
                 <Typography variant="h6" className={classes.disabled}>
@@ -105,10 +105,7 @@ class ListShow extends Component {
                 <Typography variant="caption" color="secondary">
                   STATUS
                 </Typography>
-                <Typography
-                  variant="</Grid>ubtitle2"
-                  className={classes.disabled}
-                >
+                <Typography variant="subtitle2" className={classes.disabled}>
                   Deleted
                 </Typography>
               </Grid>
